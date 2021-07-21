@@ -1,0 +1,14 @@
+<p>counter works!</p>
+
+<div *ngIf="counter$ | async; let counter">
+    {{ counter.count }}
+</div>
+
+
+<button (click)="increase()">Increase</button>
+
+<button (click)="decrease()">Decrease</button>
+
+<input [(ngModel)]="this.amount">
+
+<button (click)="increaseBy()">Increase by {{ this.amount }}</button>

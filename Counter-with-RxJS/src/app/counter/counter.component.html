@@ -1,9 +1,6 @@
 <p>counter works!</p>
 
-<div *ngIf="counter$ | async; let counter">
-    {{ counter.count }}
-</div>
-
+{{ (counter$ | async)?.count }}
 
 <button (click)="increase()">Increase</button>
 

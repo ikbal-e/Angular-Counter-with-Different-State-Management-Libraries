@@ -5,7 +5,7 @@ export interface CounterStateModel {
     count: number
 }
 
-export const initialState: CounterStateModel = {
+const initialState: CounterStateModel = {
     count: 0
 };
 

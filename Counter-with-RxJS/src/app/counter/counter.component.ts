@@ -16,7 +16,7 @@ export class CounterComponent implements OnInit {
   constructor(protected counterService: CounterService) { }
 
   ngOnInit(): void {
-    this.counter$ = this.counterService.counter.asObservable();
+    this.counter$ = this.counterService.counter;
   }
 
   increase() {

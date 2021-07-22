@@ -14,19 +14,21 @@ export class CounterService {
     count: 0
   }
 
-  public counter = new BehaviorSubject<CounterStateModel>(this.initialState);
+  private _counter = new BehaviorSubject<CounterStateModel>(this.initialState);
+
+  public counter = this._counter.asObservable();
 
   constructor() { }
 
   increase() {
-    this.counter.next({ count: this.counter.getValue().count + 1 })
+    this._counter.next({ count: this._counter.getValue().count + 1 })
   }
 
   decrease() {
-    this.counter.next({ count: this.counter.getValue().count - 1 })
+    this._counter.next({ count: this._counter.getValue().count - 1 })
   }
 
   increaseBy(amount: number) {
-    this.counter.next({ count: this.counter.getValue().count + Number(amount) })
+    this._counter.next({ count: this._counter.getValue().count + Number(amount) })
   }
 }
